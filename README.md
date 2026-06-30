@@ -1,6 +1,6 @@
 # Car Rental System 🚗
 
-A comprehensive full-stack application designed to streamline vehicle rentals. This project handles everything from user registration to real-time booking management.
+Car Rental System is a production-grade, full-stack enterprise web application engineered to modernize and streamline vehicle leasing operations. Built using a decoupled, scalable architecture—leveraging a robust Spring Boot RESTful API for the backend and a high-performance Angular 16 component-driven frontend—the platform manages the complete reservation lifecycle. From secure customer onboarding and dynamic fleet inventory tracking to complex reservation state management and optimized relational data handling with MySQL, this system solves core real-world engineering challenges like data consistency, secure role-based access control, and seamless user experiences.
 
 ---
 
