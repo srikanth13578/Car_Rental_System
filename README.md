@@ -58,7 +58,7 @@ Admin Dashboard
 ## ⚙️ Installation & Setup
 
 ### 1. Database Setup
-1. Create a MySQL database named `vehicle_rental_db`.
+1. Create a MySQL database named `service_booking_system_db`.
 2. Update `src/main/resources/application.properties` with your MySQL username and password.
 
 ### 2. Backend (Spring Boot)
