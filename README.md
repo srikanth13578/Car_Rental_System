@@ -57,6 +57,36 @@ Admin Dashboard
 
 ## ⚙️ Installation & Setup
 
+### Method A: 🐳 The Dockerized Setup
+This project is fully containerized and orchestrated using **Docker** and **Docker Compose**. It separates the architecture into isolated, high-performance environments while maintaining secure connectivity to the underlying data layer.
+
+#### Architecture Breakdown
+* **Frontend Container (`ServiceBookingWeb`):** Uses a multi-stage Docker build. Stage 1 utilizes a lightweight Node.js environment to compile optimized production bundles. Stage 2 serves these static assets using a high-performance **Nginx** reverse-proxy web server on port `8081`.
+* **Backend Container (`ServiceBookingSystem`):** Uses a multi-stage Maven compilation process to generate a production-ready executable `.jar` file, running dynamically on an **Eclipse Temurin OpenJDK 17** runtime on port `9090`.
+* **Database Link:** Integrated directly with the host network interface to communicate seamlessly with localized database configurations.
+
+#### 🚀 How to Run with Docker
+
+1. **Open Ports:** Make sure native web servers (like Apache) are stopped to avoid port conflicts:
+   ```bash
+   sudo systemctl stop apache2
+   ```
+2. **Spin Up the Stack:** Navigate to the root directory of the project and execute the orchestrator script:
+   ```bash
+   docker compose up --build
+   ```
+   *Note: For subsequent runs, you can drop the `--build` flag to launch the entire full-stack system instantly in under 3 seconds:*
+   ```bash
+   docker compose up
+   ```
+3. **Access Modules:** Once the initialization loops settle:
+   * **Car Rental UI Landing Page:** Open your browser and navigate to `http://localhost:8081`
+   * **REST API Gateway Endpoints:** Operating seamlessly at `http://localhost:9090`
+
+---
+
+### Method B: Manual Local Setup
+
 ### 1. Database Setup
 1. Create a MySQL database named `service_booking_system_db`.
 2. Update `src/main/resources/application.properties` with your MySQL username and password.
